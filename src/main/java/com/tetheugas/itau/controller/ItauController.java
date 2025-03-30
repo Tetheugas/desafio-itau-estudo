@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api")
 public class ItauController {
@@ -19,4 +21,11 @@ public class ItauController {
 
         return itauService.save(valor);
     }
+
+    @DeleteMapping(value = "/transacao")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteTransacao() {
+        itauService.delete();
+    }
+
 }
